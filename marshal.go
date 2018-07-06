@@ -9,7 +9,7 @@
 // You should have received a copy of the CC0 Public Domain Dedication along
 // with this software. If not, see // <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-// Provides encoding and decoding routines for various cryptographic structures.
+// Package cryptopasta provides encoding and decoding routines for various cryptographic structures.
 package cryptopasta
 
 import (
@@ -100,13 +100,13 @@ func EncodePrivateKey(key *ecdsa.PrivateKey) ([]byte, error) {
 	return pem.EncodeToMemory(keyBlock), nil
 }
 
-// Encodes an ECDSA signature according to
+// EncodeSignatureJWT encodes an ECDSA signature according to
 // https://tools.ietf.org/html/rfc7515#appendix-A.3.1
 func EncodeSignatureJWT(sig []byte) string {
 	return base64.RawURLEncoding.EncodeToString(sig)
 }
 
-// Decodes an ECDSA signature according to
+// DecodeSignatureJWT decodes an ECDSA signature according to
 // https://tools.ietf.org/html/rfc7515#appendix-A.3.1
 func DecodeSignatureJWT(b64sig string) ([]byte, error) {
 	return base64.RawURLEncoding.DecodeString(b64sig)

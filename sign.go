@@ -9,7 +9,7 @@
 // You should have received a copy of the CC0 Public Domain Dedication along
 // with this software. If not, see // <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-// Provides message authentication and asymmetric signatures.
+// Package cryptopasta provides message authentication and asymmetric signatures.
 //
 // Message authentication: HMAC SHA512/256
 // This is a slight twist on the highly dependable HMAC-SHA256 that gains

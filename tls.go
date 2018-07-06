@@ -9,11 +9,12 @@
 // You should have received a copy of the CC0 Public Domain Dedication along
 // with this software. If not, see // <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-// Provides a recommended TLS configuration.
+// Package cryptopasta provides a recommended TLS configuration.
 package cryptopasta
 
 import "crypto/tls"
 
+// DefaultTLSConfig returns a pointer to a TLS Config.
 func DefaultTLSConfig() *tls.Config {
 	return &tls.Config{
 		// Avoids most of the memorably-named TLS attacks
