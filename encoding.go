@@ -12,9 +12,12 @@ func EncodeB64(data []byte) string {
 }
 
 // DecodeB64 decodes a b64 string into a slice of bytes.
-func DecodeB64(str string) (data []byte, err error) {
-	data, err = base64.StdEncoding.DecodeString(str)
-	return
+func DecodeB64(str string) []byte {
+	data, err := base64.StdEncoding.DecodeString(str)
+	if err != nil {
+		panic(err)
+	}
+	return data
 }
 
 // EncodeHex encodes a slice of bytes into a hex encoded string.
@@ -23,7 +26,10 @@ func EncodeHex(data []byte) string {
 }
 
 // DecodeHex decodes a hex string into a slice of bytes.
-func DecodeHex(str string) (data []byte, err error) {
-	data, err = hex.DecodeString(str)
-	return
+func DecodeHex(str string) []byte {
+	data, err := hex.DecodeString(str)
+	if err != nil {
+		panic(err)
+	}
+	return data
 }

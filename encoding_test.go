@@ -35,10 +35,7 @@ func TestDecodeB64(t *testing.T) {
 		},
 	}
 	for _, tt := range decTests {
-		actual, err := DecodeB64(tt.testStr)
-		if err != nil {
-			t.Fatal(err)
-		}
+		actual := DecodeB64(tt.testStr)
 		actualStr := string(actual)
 		if strings.Compare(actualStr, tt.decodedStr) != 0 {
 			t.Errorf("encoded string does not match the expected string")
@@ -76,10 +73,7 @@ func TestDecodeHex(t *testing.T) {
 		},
 	}
 	for _, tt := range decTests {
-		actual, err := DecodeHex(tt.testStr)
-		if err != nil {
-			t.Fatal(err)
-		}
+		actual := DecodeHex(tt.testStr)
 		actualStr := string(actual)
 		if strings.Compare(actualStr, tt.decodedStr) != 0 {
 			t.Errorf("encoded string does not match the expected string")
